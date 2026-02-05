@@ -897,28 +897,24 @@
             <div class="terminal-dot red"></div>
             <div class="terminal-dot yellow"></div>
             <div class="terminal-dot green"></div>
-            <span class="terminal-title">sarge — ~/myproject</span>
+            <span class="terminal-title">sarge tui</span>
           </div>
-          <div class="terminal-body">
-            <div class="terminal-line">
-              <span class="terminal-prompt">❯</span>
-              <span class="terminal-command">sarge work create issue-42 --auto</span>
-            </div>
-            <div class="terminal-output">Creating work unit w-8xa...</div>
-            <div class="terminal-output success">✓ Worktree created at ./w-8xa</div>
-            <div class="terminal-output success">✓ Branch feature/fix-auth-bug</div>
-            <div class="terminal-output info">→ Executing task w-8xa.1</div>
-            <div class="terminal-output">  Agent: claude-code</div>
-            <div class="terminal-output">  Issue: Fix authentication timeout</div>
-            <div class="terminal-output success">✓ Task completed, changes committed</div>
-            <div class="terminal-output info">→ Running code review...</div>
-            <div class="terminal-output success">✓ Review passed</div>
-            <div class="terminal-output info">→ Creating pull request...</div>
-            <div class="terminal-output success">✓ PR #127 created</div>
-            <div class="terminal-line" style="margin-top: 8px;">
-              <span class="terminal-prompt">❯</span>
-              <span class="terminal-cursor"></span>
-            </div>
+          <div class="terminal-body" style="font-size: 11px; line-height: 1.5; padding: 12px;">
+<pre style="color: var(--text-secondary); margin: 0;"><span style="background: var(--accent-green); color: var(--bg-primary); padding: 1px 6px; font-weight: 600;">Sarge</span>  <span style="color: var(--text-muted);">energetic_zhukovsky</span>
+
+<span style="color: var(--accent-green);">Work</span>                              <span style="color: var(--accent-green);">Details</span>
+<span style="color: var(--text-muted);">○</span> w-2bn <span style="color: var(--accent-amber);">energetic_zhukovsky</span>      Status: <span style="color: var(--accent-amber);">pending</span>
+  Branch: feat/fix-auth-timeout   Progress: 0% (0/1 tasks)
+  Progress: 0% (0/1 tasks)
+  <span style="color: var(--accent-green);">✓</span> Orchestrator running          <span style="color: var(--accent-green);">Root Issue</span>
+                                   <span style="color: var(--text-primary);">Fix authentication timeout</span>
+  <span style="color: var(--accent-blue);">─▶</span> <span style="background: var(--accent-blue); color: var(--bg-primary); padding: 0 4px;">ac-4od.1 Fix auth timeout</span>   ac-4od.1  Type: task  P2
+
+<span style="color: var(--accent-blue);">Issues</span> <span style="color: var(--text-muted);">[children:ac-4od.1]</span>       <span style="color: var(--accent-blue);">Details</span>
+<span style="color: #a78bfa;">█</span> ac-4od T Fix auth timeout...   ID: ac-4od  Status: <span style="color: var(--accent-green);">open</span>
+<span style="color: var(--text-muted);">└─○</span> ac-4od.1 T Add retry logic    Session tokens expire without
+                                   proper refresh handling...
+<span style="color: var(--text-muted);">[t]erminal [c]laude [r]un [v]review [p]r [f]eedback [?]Help</span></pre>
           </div>
         </div>
       </div>
@@ -962,7 +958,7 @@
           <div class="feature-icon">🎯</div>
           <h3 class="feature-title">Interactive TUI</h3>
           <p class="feature-description">
-            A lazygit-style terminal interface for managing beads, works, and tasks with keyboard shortcuts.
+            A lazygit-style terminal interface for managing issues, works, and tasks with keyboard shortcuts.
           </p>
         </div>
         <div class="feature-card">
@@ -998,22 +994,22 @@
         <div class="workflow-step">
           <div class="step-number">1</div>
           <h3 class="step-title">Create Issues</h3>
-          <p class="step-description">Define work in Beads or import from Linear</p>
+          <p class="step-description">Create issues or import from Linear</p>
         </div>
         <div class="workflow-step">
           <div class="step-number">2</div>
+          <h3 class="step-title">Plan</h3>
+          <p class="step-description">Group issues into works and tasks</p>
+        </div>
+        <div class="workflow-step">
+          <div class="step-number">3</div>
           <h3 class="step-title">Execute</h3>
           <p class="step-description">Agents solve issues and commit changes</p>
         </div>
         <div class="workflow-step">
-          <div class="step-number">3</div>
-          <h3 class="step-title">Review</h3>
-          <p class="step-description">Auto-review catches issues before PR</p>
-        </div>
-        <div class="workflow-step">
           <div class="step-number">4</div>
-          <h3 class="step-title">Ship</h3>
-          <p class="step-description">PR created, ready for human review</p>
+          <h3 class="step-title">CI Loop</h3>
+          <p class="step-description">Failures become issues, agents fix, repeat</p>
         </div>
       </div>
     </div>
@@ -1031,11 +1027,11 @@
           <div class="code-features">
             <div class="code-feature">
               <div class="code-feature-icon">✓</div>
-              <span>Create works from multiple issues at once</span>
+              <span>Run concurrent work streams in isolated worktrees</span>
             </div>
             <div class="code-feature">
               <div class="code-feature-icon">✓</div>
-              <span>Full automation with <code class="mono">--auto</code> flag</span>
+              <span>Full automation with rich GitHub integration</span>
             </div>
             <div class="code-feature">
               <div class="code-feature-icon">✓</div>
@@ -1043,7 +1039,7 @@
             </div>
             <div class="code-feature">
               <div class="code-feature-icon">✓</div>
-              <span>SQLite tracking database for coordination</span>
+              <span>CI failures automatically become fixable issues</span>
             </div>
           </div>
         </div>
@@ -1052,23 +1048,28 @@
             <div class="terminal-dot red"></div>
             <div class="terminal-dot yellow"></div>
             <div class="terminal-dot green"></div>
-            <span class="terminal-title">sarge tui</span>
+            <span class="terminal-title">sarge — ~/myproject</span>
           </div>
-          <div class="terminal-body" style="font-size: 12px; line-height: 1.6;">
-<pre style="color: var(--text-secondary); margin: 0;">
-<span style="color: var(--accent-green);">┌─ Beads ──────────────────────────┐</span>
-│ <span style="color: var(--accent-amber);">●</span> ac-pjw  Fix auth timeout       │
-│ <span style="color: var(--accent-green);">●</span> ac-qrx  Add rate limiting     │
-│ <span style="color: var(--text-muted);">○</span> ac-stm  Update API docs       │
-│ <span style="color: var(--text-muted);">○</span> ac-uvn  Refactor user model   │
-<span style="color: var(--accent-green);">└──────────────────────────────────┘</span>
-<span style="color: var(--accent-blue);">┌─ Works ──────────────────────────┐</span>
-│ <span style="color: var(--accent-green);">▶</span> w-8xa  feature/fix-auth      │
-│   └─ <span style="color: var(--accent-green);">✓</span> w-8xa.1 (completed)    │
-<span style="color: var(--accent-blue);">└──────────────────────────────────┘</span>
-
-<span style="color: var(--text-muted);">[c]reate work  [r]un  [d]estroy  [?]help</span>
-</pre>
+          <div class="terminal-body">
+            <div class="terminal-line">
+              <span class="terminal-prompt">❯</span>
+              <span class="terminal-command">sarge work create issue-42 --auto</span>
+            </div>
+            <div class="terminal-output">Creating work unit w-8xa...</div>
+            <div class="terminal-output success">✓ Worktree created at ./w-8xa</div>
+            <div class="terminal-output success">✓ Branch feature/fix-auth-bug</div>
+            <div class="terminal-output info">→ Executing task w-8xa.1</div>
+            <div class="terminal-output">  Agent: claude-code</div>
+            <div class="terminal-output">  Issue: Fix authentication timeout</div>
+            <div class="terminal-output success">✓ Task completed, changes committed</div>
+            <div class="terminal-output info">→ Running code review...</div>
+            <div class="terminal-output success">✓ Review passed</div>
+            <div class="terminal-output info">→ Creating pull request...</div>
+            <div class="terminal-output success">✓ PR #127 created</div>
+            <div class="terminal-line" style="margin-top: 8px;">
+              <span class="terminal-prompt">❯</span>
+              <span class="terminal-cursor"></span>
+            </div>
           </div>
         </div>
       </div>
