@@ -6,6 +6,7 @@
   <title>Sarge — AI Agent Orchestrator</title>
   <meta name="description" content="Turn your issue tracker into a PR factory. Orchestrate AI coding agents to solve issues, review code, and create pull requests.">
   
+  <link rel="icon" type="image/png" href="favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -114,14 +115,7 @@
     .logo-icon {
       width: 36px;
       height: 36px;
-      background: var(--accent-green);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 18px;
-      color: var(--bg-primary);
+      object-fit: contain;
     }
 
     .logo-text {
@@ -752,7 +746,6 @@
     .footer-logo .logo-icon {
       width: 28px;
       height: 28px;
-      font-size: 14px;
     }
 
     .footer-links {
@@ -857,7 +850,7 @@
   <nav>
     <div class="container">
       <a href="/" class="logo">
-        <div class="logo-icon">S</div>
+        <img class="logo-icon" src="logo-icon.png" alt="Sarge">
         <span class="logo-text">Sarge</span>
       </a>
       <div class="nav-links">
@@ -1161,7 +1154,7 @@
     <div class="container">
       <div class="footer-left">
         <a href="/" class="footer-logo">
-          <div class="logo-icon">S</div>
+          <img class="logo-icon" src="logo-icon.png" alt="Sarge">
           <span>Sarge</span>
         </a>
         <div class="footer-links">
